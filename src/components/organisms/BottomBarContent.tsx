@@ -6,11 +6,11 @@ import {
   Button,
   styled,
   InputBase,
-  useTheme
-} from '@mui/material';
-import AttachFileTwoToneIcon from '@mui/icons-material/AttachFileTwoTone';
-import SendTwoToneIcon from '@mui/icons-material/SendTwoTone';
-import { red } from '@mui/material/colors';
+  useTheme,
+} from "@mui/material";
+import AttachFileTwoToneIcon from "@mui/icons-material/AttachFileTwoTone";
+import SendTwoToneIcon from "@mui/icons-material/SendTwoTone";
+import { red } from "@mui/material/colors";
 
 const MessageInputWrapper = styled(InputBase)(
   ({ theme }) => `
@@ -20,30 +20,30 @@ const MessageInputWrapper = styled(InputBase)(
 `
 );
 
-const Input = styled('input')({
-  display: 'none'
+const Input = styled("input")({
+  display: "none",
 });
 
 function BottomBarContent() {
   const theme = useTheme();
 
   const user = {
-    name: 'Catherine Pike',
-    avatar: '/static/images/avatars/1.jpg'
+    name: "Catherine Pike",
+    avatar: "/static/images/avatars/1.jpg",
   };
 
   return (
     <Box
       sx={{
         background: red,
-        display: 'flex',
-        alignItems: 'center',
-        p: 2
+        display: "flex",
+        alignItems: "center",
+        p: 2,
       }}
     >
       <Box flexGrow={1} display="flex" alignItems="center">
         <Avatar
-          sx={{ display: { xs: 'none', sm: 'flex' }, mr: 1 }}
+          sx={{ display: { xs: "none", sm: "flex" }, mr: 1 }}
           alt={user.name}
           src={user.avatar}
         />
@@ -54,14 +54,6 @@ function BottomBarContent() {
         />
       </Box>
       <Box>
-        <Tooltip arrow placement="top" title="Choose an emoji">
-          <IconButton
-            sx={{ fontSize: theme.typography.pxToRem(16) }}
-            color="primary"
-          >
-            😀
-          </IconButton>
-        </Tooltip>
         <Input accept="image/*" id="messenger-upload-file" type="file" />
         <Tooltip arrow placement="top" title="Attach a file">
           <label htmlFor="messenger-upload-file">
